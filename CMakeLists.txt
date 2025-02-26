@@ -33,6 +33,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE Drogon::Drogon)
 
 # ##############################################################################
 
+# json parsing using nhohmann_json library
+find_package(nlohmann_json 3.11.3 REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
+
+
+
 if (CMAKE_CXX_STANDARD LESS 17)
     message(FATAL_ERROR "c++17 or higher is required")
 elseif (CMAKE_CXX_STANDARD LESS 20)
